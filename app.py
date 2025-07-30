@@ -91,6 +91,8 @@ def get_chart_data():
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)})
 
-# Run server
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    app.run(debug=False, host='0.0.0.0', port=port)
+
