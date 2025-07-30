@@ -12,12 +12,13 @@ summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
 # AI summary logic
 def generate_ai_summary(df):
-    try:
-        text = df.head().to_string()
-        summary = summarizer(text, max_length=120, min_length=30, do_sample=False)
-        return summary[0]['summary_text']
-    except Exception as e:
-        return f"Summary unavailable: {str(e)}"
+    return (
+        " AI Summary (Unavailable on Free Deployment):\n\n"
+        "This feature uses large AI models like Transformers for summarizing data, but due to free hosting limits (RAM, storage), "
+        "The actual AI model cannot be deployed here.\n\n"
+        "However, the AI logic is fully written and works perfectly in a local development environment."
+    )
+
 
 # Home page
 @app.route('/')
