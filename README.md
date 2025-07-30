@@ -63,3 +63,23 @@ AI-Powered-Analytics-Dashboard/
 ├── uploads/               # (Optional) Temp storage for uploaded CSVs
 ├── README.md              # Project overview + AI usage report
 ```
+
+##  Screenshots
+
+###  1. Full Dashboard UI
+<p float="left">
+  <img src="screenshots/dashboard.png" width="48%" />
+  <img src="screenshots/reports.png" width="48%" />
+</p>
+
+### 📂 2. CSV Upload + AI Summary
+<p float="left">
+  <img src="screenshots/csv_upload.png" width="48%" />
+  <img src="screenshots/ai_summary.png" width="48%" />
+</p>
+
+### 📈 3. Chart Visualization
+<img src="screenshots/chart.png" width="80%" />
+
+### 🌙 4. Dark Mode View
+<img src="screenshots/darkmode.png" width="80%" />
