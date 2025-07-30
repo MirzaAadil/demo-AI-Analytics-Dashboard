@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Analytics Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+  <div class="navbar">
+    <a href="#" class="nav-link" onclick="loadPage('overview')">Overview</a>
+    <a href="#" class="nav-link" onclick="loadPage('reports')">Reports</a>
+    <a href="#" class="nav-link" onclick="loadPage('settings')">Settings</a>
+  </div>
+
+  <div class="container">
+    <!-- Overview Section -->
+    <div id="overview" class="page-section">
+      <h1>AI-Powered Analytics Dashboard</h1>
+      <p class="intro-text">Upload a CSV file to get AI-generated insights and visual reports.</p>
+      
+      <input type="file" id="csvFile" accept=".csv" />
+      <button onclick="uploadCSV()">Upload & Analyze</button>
+
+      <div id="summaryContainer" class="summary" style="display:none;">
+        <h2>AI Summary</h2>
+        <p id="summaryBox"></p>
+      </div>
+
+      <div id="chartControls" class="chart-controls" style="display:none;">
+        <label for="x-axis">X-axis:</label>
+        <select id="x-axis" onchange="generateChart()"></select>
+
+        <label for="y-axis">Y-axis:</label>
+        <select id="y-axis" onchange="generateChart()"></select>
+      </div>
+
+      <canvas id="chartCanvas" width="600" height="300" style="display:none;"></canvas>
+    </div>
+
+    <!-- Reports Section -->
+    <div id="reports" class="page-section" style="display: none;">
+      <h2>📊 Reports</h2>
+      <p>Detailed reports and export features are coming soon!</p>
+    </div>
+
+    <!-- Settings Section -->
+    <div id="settings" class="page-section" style="display: none;">
+      <h2>⚙️ Settings</h2>
+      <label class="switch">
+        <input type="checkbox" id="themeToggle" onclick="toggleTheme()" />
+        <span class="slider round"></span>
+      </label>
+      <span class="toggle-label">Dark Mode</span>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
