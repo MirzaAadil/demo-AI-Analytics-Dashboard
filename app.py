@@ -6,9 +6,6 @@ import os
 app = Flask(__name__)
 uploaded_df = None  # global to store uploaded DataFrame
 
-# Load local model once
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
-
 # AI summary logic
 def generate_ai_summary(df):
     return (
